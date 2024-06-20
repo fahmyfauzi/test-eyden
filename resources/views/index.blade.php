@@ -41,6 +41,7 @@
                     <a href="#"
                         class="text-sm font-semibold leading-6 text-gray-900 border-2 px-2 border-black border-solid rounded-full">Contact
                         Us</a>
+                    <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-gray-900 ">Login -></a>
                 </div>
 
             </nav>
