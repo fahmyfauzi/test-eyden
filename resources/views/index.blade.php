@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test Eyden Creative`</title>
+    <title>Test Eyden Creative</title>
     @vite('resources/css/app.css')
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+    <link rel="icon" href="{{ asset('images/letter-t.png') }}">
 </head>
 
 <body>
-    <div class="bg-white">
+    <div class="bg-white md:container md:mx-auto">
         {{-- navbar --}}
         <header class="absolute inset-x-0 top-0 z-50" x-data="{ open: false }">
             <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -84,7 +85,7 @@
         </header>
 
         {{-- hero section --}}
-        <section class="relative isolate px-6 pt-14 lg:px-8">
+        <section class="relative isolate px-6  mt-20 lg:px-8 md:mt-20">
             <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                 aria-hidden="true">
                 <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
@@ -98,95 +99,111 @@
                             {{ $content[0]->title4 ? $content[0]->title4 : 'The vacation you deserve is closer than you think 😍' }}
                         </p>
                         <div class="flex">
-                            <h2 class="text-2xl font-bold sm:text-4xl">
+                            <h2 class="text-4xl font-bold ">
                                 {{ $content[0]->title1 ? $content[0]->title1 : 'Life is short' }}</h2>
                             <span>
                                 <img src="{{ asset('images/asset-camera.png') }}" alt="icon camera"
                                     class="w-20 h-8 object-cover ">
                             </span>
                         </div>
-                        <h2 class="text-3xl font-bold sm:text-4xl">
+                        <h2 class="text-4xl font-bold ">
                             {{ $content[0]->title2 ? $content[0]->title2 : 'and the world 🌍' }} <br>
                             {{ $content[0]->title3 ? $content[0]->title3 : 'is Wide! 🏝️' }}
                         </h2>
 
                         {{-- form search --}}
-                        <form class="lg:mt-12 md:mt-8 lg:absolute z-20">
-                            <div class="bg-white py-4 px-8 flex flex-wrap justify-between shadow-xl rounded-full ">
-                                <div class="flex justify-between items-center">
-                                    <div class="flex-none w-10">
-                                        <label for="location">
+                        <form class="lg:mt-12 md:mt-8 mt-10 lg:w-4/6 lg:absolute z-20">
+                            <div
+                                class="bg-white md:py-4 md:px-8 py-10 px-14 flex flex-wrap justify-between shadow-xl rounded-full space-x-2  ">
+
+                                {{-- location --}}
+                                <div class="flex md:justify-between items-center w-full md:w-auto lg:mx-4 ">
+                                    <label for="date">
+                                        <div class="flex-none w-10">
                                             <img src="{{ asset('icons/icon-location.png') }}" alt="icon pin location"
                                                 class="w-8">
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <label for="return">Location</label>
-                                        <select id="location" name="location"
-                                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                            <option>United States</option>
+                                        </div>
+                                    </label>
+                                    <div class="w-full md:w-auto">
+                                        <label for="location">Location</label>
+                                        <select name="location" id="location"
+                                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
                                             <option>Canada</option>
+                                            <option>United States</option>
                                             <option>Mexico</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="flex justify-between items-center mx-4">
+                                <div class="flex md:justify-between items-center w-full md:w-auto lg:mx-4 ">
                                     <label for="date">
                                         <div class="flex-none w-10">
                                             <img src="{{ asset('icons/icon-calendar.png') }}" alt="icon pin location"
                                                 class="w-8">
                                         </div>
                                     </label>
-                                    <div>
+                                    <div class="w-full md:w-auto">
                                         <label for="date">Date</label>
                                         <input type="date" name="date" id="date"
                                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2 ">
                                     </div>
                                 </div>
-                                <div class="flex justify-between items-center">
+                                {{-- return --}}
+                                <div class="flex md:justify-between items-center w-full md:w-auto">
                                     <label for="return">
                                         <div class="flex-none w-10">
                                             <img src="{{ asset('icons/icon-calendar.png') }}" alt="icon pin location"
                                                 class="w-8">
                                         </div>
                                     </label>
-                                    <div>
+                                    <div class="w-full md:w-auto">
                                         <label for="return">Return</label>
                                         <input type="date" name="return" id="return"
                                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
                                     </div>
                                 </div>
-                                <div class="flex justify-between items-center">
-                                    <button class="p-2 ms-4 rounded-full bg-amber-500">
+                                <div class="flex justify-end ml-10 md:ml-4 items-center w-full md:w-auto mt-2">
+                                    <button
+                                        class="p-2  md:rounded-full rounded-2xl bg-amber-500 flex items-center space-x-2">
+                                        <span class="md:hidden text-white">Search</span>
                                         <img src="{{ asset('icons/icon-search.png') }}" alt="icon search"
-                                            class="w-8">
+                                            class="w-6">
                                     </button>
+
                                 </div>
                             </div>
                         </form>
+
                     </div>
 
                     {{--  image hero --}}
-                    <div class="flex justify-center">
-                        <div class="overflow-hidden z-10">
+                    <div class="flex justify-center ">
+                        <div class="overflow-hidden  z-10">
                             <img class="inline-block w-16 h-auto rounded-full ring-2 ring-white absolute z-20 ml-4 mt-20 bg-purple-50 p-2"
                                 src="{{ $content[0]->asset1 ? 'storage/' . $content[0]->asset1 : asset('images/helicopter.png') }}"
                                 alt="image helicopter">
                             <img class="inline-block w-16 h-auto rounded-full ring-2 ring-white absolute z-20 ml-60 mt-20 bg-purple-100 p-2"
-                                src="{{ $content[0]->asset2 ? 'storage/' . $content[0]->asset2 : asset('images/gunung.png') }}"
-                                alt="gunung">
+                                src="{{ $content[0]->asset2 ? 'storage/' . $content[0]->asset2 : asset('images/gunung.png') }}">
+
+                            <img src="{{ asset('images/asset-location.png') }}" alt="icon location"
+                                class="h-20 z-40 ml-60 object-cover absolute ">
+
+
+
                             <img class="inline-block w-16 h-auto rounded-full ring-2 ring-white absolute z-20 ml-60 mt-64 bg-white p-2"
-                                src="{{ $content[0]->asset3 ? 'storage/' . $content[0]->asset3 : asset('images/perahu.png') }}"
-                                alt="gunung">
+                                src="{{ $content[0]->asset3 ? 'storage/' . $content[0]->asset3 : asset('images/perahu.png') }}">
                             <img class="ml-10 w-60 h-96 object-cover rounded-full border-4 border-white max-w-full "
                                 src="{{ $content[0]->hero1 ? 'storage/' . $content[0]->hero1 : asset('images/hero-1.jpg') }}"
                                 alt="hero satu">
                         </div>
+
+
                         <div class="overflow-hidden absolute">
-                            <img class=" w-52 h-72 object-cover rounded-full  max-w-full ml-52 mt-44"
-                                src="{{ $content[0]->hero2 ? 'storage/' . $content[0]->hero2 : asset('images/hero-2.jpg') }}"
-                                alt="">
+
+                            <img class="w-52 h-72 object-cover rounded-full  max-w-full  ml-64 mt-40"
+                                src="{{ $content[0]->hero2 ? 'storage/' . $content[0]->hero2 : asset('images/hero-2.jpg') }}">
+
                         </div>
+
                     </div>
                 </div>
             </div>

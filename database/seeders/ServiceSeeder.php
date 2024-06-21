@@ -19,17 +19,17 @@ class ServiceSeeder extends Seeder
             "description" => "Try a varienty of benefits when using our services"
         ]);
         Service::create([
-            "image" => "world.png",
+            "image" => "assets/world.png",
             "title" => "Lot of Choices",
             "description" => "Total 460+ destinations that we work with."
         ]);
         Service::create([
-            "image" => "briefcase.png",
+            "image" => "assets/briefcase.png",
             "title" => "Best Tour Guide",
             "description" => "Our tour guide with 15+ years of experience."
         ]);
         Service::create([
-            "image" => "ticket.png",
+            "image" => "assets/ticket.png",
             "title" => "Easy Booking",
             "description" => "With an easy and fast ticket purchase process."
         ]);
