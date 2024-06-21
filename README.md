@@ -1,6 +1,15 @@
 # Content Management System (CMS) Sederhana 
 Membuat CMS Sederhana.  Assesment yang diberikan dari Eyden Creative
 
+1. Buat 1 page website sepeti dengan contoh berikut,
+https://cdn.dribbble.com/userupload/4104573/file/original-95940d3740395aa4460f3de8bfef7dec.jpg?compress=1&resize=2048x1536
+*Asset image, icon, dan font family tidak perlu sama persis dengan contoh (asset bisa dicari dan diambil dari https://www.freepik.com/), namun untuk template dan peletakan komponen nya perlu disamakan.
+2. Buat 1 halaman CMS (content management system) untuk keperluan mengubah konten (seperti text dan image) yang ada di dalam page yang dibuat pada soal nomor 1. Artinya semua konten pada page di soal nomor 1 tersimpan di dalam database.
+
+    Submission:
+    - file Laravel Project / native html,css,javascript (preferable untuk styling dengan Tailwind)
+    - file sql
+
 ## features
 - Landing Page
 - CMS update content
