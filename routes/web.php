@@ -3,10 +3,15 @@
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
+use App\Models\Content;
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'content' => Content::all(),
+        "services" => Service::all()
+    ]);
 })->name('landing');
 
 Route::get('/dashboard', function () {

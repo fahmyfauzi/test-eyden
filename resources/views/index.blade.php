@@ -83,7 +83,7 @@
             </div>
         </header>
 
-
+        {{-- hero section --}}
         <section class="relative isolate px-6 pt-14 lg:px-8">
             <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                 aria-hidden="true">
@@ -94,20 +94,23 @@
             <div class="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
                 <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-2  lg:gap-x-16">
                     <div class="mx-auto max-w-2xl  lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
-                        <p class="text-gray-400">The vacation you deserve is closer than you think 😍</p>
+                        <p class="text-gray-400">
+                            {{ $content[0]->title4 ? $content[0]->title4 : 'The vacation you deserve is closer than you think 😍' }}
+                        </p>
                         <div class="flex">
-                            <h2 class="text-2xl font-bold sm:text-4xl">Life is short</h2>
+                            <h2 class="text-2xl font-bold sm:text-4xl">
+                                {{ $content[0]->title1 ? $content[0]->title1 : 'Life is short' }}</h2>
                             <span>
                                 <img src="{{ asset('images/asset-camera.png') }}" alt="icon camera"
                                     class="w-20 h-8 object-cover ">
                             </span>
                         </div>
                         <h2 class="text-3xl font-bold sm:text-4xl">
-                            and the world 🌍
+                            {{ $content[0]->title2 ? $content[0]->title2 : 'and the world 🌍' }} <br>
+                            {{ $content[0]->title3 ? $content[0]->title3 : 'is Wide! 🏝️' }}
                         </h2>
-                        <h2 class="text-3xl font-bold sm:text-4xl">
-                            is Wide! 🏝️
-                        </h2>
+
+                        {{-- form search --}}
                         <form class="lg:mt-12 md:mt-8 lg:absolute z-20">
                             <div class="bg-white py-4 px-8 flex flex-wrap justify-between shadow-xl rounded-full ">
                                 <div class="flex justify-between items-center">
@@ -163,27 +166,32 @@
                         </form>
                     </div>
 
+                    {{--  image hero --}}
                     <div class="flex justify-center">
                         <div class="overflow-hidden z-10">
                             <img class="inline-block w-16 h-auto rounded-full ring-2 ring-white absolute z-20 ml-4 mt-20 bg-purple-50 p-2"
-                                src="{{ asset('images/helicopter.png') }}" alt="image helicopter">
+                                src="{{ $content[0]->asset1 ? 'storage/' . $content[0]->asset1 : asset('images/helicopter.png') }}"
+                                alt="image helicopter">
                             <img class="inline-block w-16 h-auto rounded-full ring-2 ring-white absolute z-20 ml-60 mt-20 bg-purple-100 p-2"
-                                src="{{ asset('images/gunung.png') }}" alt="gunung">
+                                src="{{ $content[0]->asset2 ? 'storage/' . $content[0]->asset2 : asset('images/gunung.png') }}"
+                                alt="gunung">
                             <img class="inline-block w-16 h-auto rounded-full ring-2 ring-white absolute z-20 ml-60 mt-64 bg-white p-2"
-                                src="{{ asset('images/perahu.png') }}" alt="gunung">
+                                src="{{ $content[0]->asset3 ? 'storage/' . $content[0]->asset3 : asset('images/perahu.png') }}"
+                                alt="gunung">
                             <img class="ml-10 w-60 h-96 object-cover rounded-full border-4 border-white max-w-full "
-                                src="{{ asset('images/hero-1.jpg') }}" alt="hero satu">
+                                src="{{ $content[0]->hero1 ? 'storage/' . $content[0]->hero1 : asset('images/hero-1.jpg') }}"
+                                alt="hero satu">
                         </div>
                         <div class="overflow-hidden absolute">
                             <img class=" w-52 h-72 object-cover rounded-full  max-w-full ml-52 mt-44"
-                                src="{{ asset('images/hero-2.jpg') }}" alt="">
+                                src="{{ $content[0]->hero2 ? 'storage/' . $content[0]->hero2 : asset('images/hero-2.jpg') }}"
+                                alt="">
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
+
+            {{-- services --}}
             <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
                 aria-hidden="true">
                 <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
@@ -192,26 +200,19 @@
             </div>
             <div
                 class="mx-auto mt-10 grid max-w-2xl grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16  pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-4">
-                <div class="flex max-w-xl flex-col items-start justify-around">
-                    <p class="font-bold text-lg text-amber-500">WHAT WE SERVE</p>
-                    <p class="text-4xl font-bold">Top Values For You 🔥</p>
-                    <p class="text-gray-500 text-sm">Try a varienty of benefits when <br> using our services</p>
-                </div>
-                <div class="flex max-w-xl flex-col items-start justify-around">
-                    <img src="{{ asset('images/world.png') }}" alt="image bola dunia" class="w-16 ">
-                    <p class="text-2xl font-bold my-4">Lot of Choices</p>
-                    <p class="text-gray-500 text-sm">Total 460+ destinations that we work with.</p>
-                </div>
-                <div class="flex max-w-xl flex-col items-start justify-around ">
-                    <img src="{{ asset('images/briefcase.png') }}" alt="image briefcase" class="w-16 mt-10 ">
-                    <p class="text-2xl font-bold my-2">Best Tour Guide</p>
-                    <p class="text-gray-500 text-sm">Our tour guide with 15+ years of experience</p>
-                </div>
-                <div class="flex max-w-xl flex-col items-start justify-around">
-                    <img src="{{ asset('images/ticket.png') }}" alt="image tiket" class="w-16">
-                    <p class="text-2xl font-bold">Easy Booking</p>
-                    <p class="text-gray-500 text-sm">With an easy and fast ticket purchase process</p>
-                </div>
+                @foreach ($services as $service)
+                    <div class="flex max-w-xl flex-col items-start ">
+                        @if (Str::startsWith($service->image, 'assets/'))
+                            <img src="{{ 'storage/' . $service->image }}" alt="image bola dunia"
+                                class="w-16 {{ $loop->index == 2 ? 'lg:mt-16' : '' }}">
+                        @else
+                            <p class="font-bold text-lg text-amber-500">{{ $service->image }}</p>
+                        @endif
+                        <p class="text-4xl font-bold my-4">{{ $service->title }}</p>
+                        <p class="text-gray-500 text-sm">{{ $service->description }}</p>
+                    </div>
+                @endforeach
+
             </div>
         </section>
 
