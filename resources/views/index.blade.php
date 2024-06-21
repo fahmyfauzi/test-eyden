@@ -76,6 +76,8 @@
                                 <a href="#"
                                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 border-2 border-black">Contact
                                     Us</a>
+                                <a href="{{ route('login') }}"
+                                    class="text-sm font-semibold leading-6 text-gray-900 ">Login</a>
                             </div>
 
                         </div>
