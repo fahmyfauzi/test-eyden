@@ -16,7 +16,7 @@
         <header class="absolute inset-x-0 top-0 z-50" x-data="{ open: false }">
             <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
-                    <a href="#" class="-m-1.5 p-1.5">
+                    <a href="{{ route('landing') }}" class="-m-1.5 p-1.5">
                         <img class="h-10 w-auto inline " src="{{ asset('images/letter-t.png') }}" alt="icon letter T">
                         <span class="font-semibold text-2xl">ravel</span>
                     </a>
@@ -41,7 +41,7 @@
                     <a href="#"
                         class="text-sm font-semibold leading-6 text-gray-900 border-2 px-2 border-black border-solid rounded-full">Contact
                         Us</a>
-                    <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-gray-900 ">Login -></a>
+                    <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-gray-900 ">Login</a>
                 </div>
 
             </nav>
